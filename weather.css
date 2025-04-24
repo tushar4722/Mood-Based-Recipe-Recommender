@@ -1,0 +1,95 @@
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcc70;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #000;
+  }
+
+  /* Weather Section */
+.weather-section {
+    padding: 100px 20px 50px;
+    text-align: center;
+    background-color: #e0f7fa;
+  }
+  
+  .weather-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .weather-box {
+    background-color: #fff;
+    border: 2px solid #00bcd4;
+    border-radius: 15px;
+    padding: 30px;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  
+  .weather-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .weather-box p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .weather-box img {
+    width: 80px;
+    margin-top: 10px;
+  }
+  
+
+  /* Weather Page - Show Me Recipes Button */
+.recipe-button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.show-recipes-btn {
+  background-color: #ffcc70;
+  color: #333;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.show-recipes-btn:hover {
+  background-color: #f39c12;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}

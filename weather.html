@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Detection</title>
+  <link rel="stylesheet" href="weather.css">
+  
+</head>
+<body>
+  
+  <!-- Header -->
+<header class="main-header">
+  <div class="logo">MoodRecipe</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="mood.html">Recipes</a>
+    <a href="#">Favorites</a>
+    <a href="#">About</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+  </nav>
+</header>
+
+  <section class="weather-section">
+    <h2>Detecting Your Weather...</h2>
+    <div class="weather-result" id="weather-box">
+      <!-- Weather details will appear here -->
+    </div>
+    
+    <div class="recipe-button-container">
+      <a href="recipes.html" class="show-recipes-btn">Show Me Recipes</a>
+    </div>
+    
+  </section>
+
+  <script>
+    const apiKey = "f0b106a92c31fd4b1d4ac30a8a70b0cf"; // Replace with your OpenWeatherMap API key
+
+    function getWeather(lat, lon) {
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          const city = data.name;
+          const temp = Math.round(data.main.temp);
+          const condition = data.weather[0].main;
+          const icon = data.weather[0].icon;
+
+          document.getElementById("weather-box").innerHTML = `
+            <h3>${city}</h3>
+            <p>${condition} & ${temp}°C</p>
+            <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${condition}">
+          `;
+
+          document.getElementById("show-recipes").style.display = "inline-block";
+        })
+        .catch(() => {
+          document.getElementById("weather-box").innerHTML = "<p>Unable to fetch weather data.</p>";
+        });
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          const { latitude, longitude } = position.coords;
+          getWeather(latitude, longitude);
+        },
+        () => {
+          document.getElementById("weather-box").innerHTML = "<p>Location access denied.</p>";
+        }
+      );
+    } else {
+      document.getElementById("weather-box").innerHTML = "<p>Geolocation not supported.</p>";
+    }
+  </script>
+
+</body>
+</html>

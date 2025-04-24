@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Your Mood</title>
+  <link rel="stylesheet" href="mood.css">
+ 
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">MoodRecipe</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="#">Favorites</a>
+      <a href="#">About</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Mood Selection -->
+  <div class="mood-container">
+    <h1>Select Your Current Mood</h1>
+    <div class="mood-grid">
+      <div class="mood-card" data-mood="happy" data-tooltip="Feeling great and joyful!">😊 Happy</div>
+      <div class="mood-card" data-mood="sad" data-tooltip="Need a comfort recipe...">😢 Sad</div>
+      <div class="mood-card" data-mood="lazy" data-tooltip="Too tired to cook much!">😴 Lazy</div>
+      <div class="mood-card" data-mood="stressed" data-tooltip="Need something calming.">😫 Stressed</div>
+      <div class="mood-card" data-mood="energetic" data-tooltip="Ready to cook something fun!">⚡ Energetic</div>
+    </div>
+  </div>
+
+  <!-- JS for Mood Selection -->
+  <script>
+    document.querySelectorAll('.mood-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const mood = card.getAttribute('data-mood');
+        localStorage.setItem('selectedMood', mood);
+        window.location.href = "weather.html";
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcc70;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #000;
+  }
+
+  
+  /* Sign Up / Login Shared Section */
+.login-section {
+padding: 120px 20px 60px;
+text-align: center;
+background-color: #fff3e0;
+}
+
+.login-section h2 {
+font-size: 2rem;
+margin-bottom: 30px;
+color: #333;
+}
+
+.login-form {
+max-width: 400px;
+margin: 0 auto;
+background: #fff;
+padding: 40px 30px;
+border-radius: 15px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input {
+width: 100%;
+padding: 12px;
+margin-bottom: 20px;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 1rem;
+transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+border-color: #f39c12;
+outline: none;
+}
+
+.login-form button {
+width: 100%;
+padding: 12px;
+background-color: #ffcc70;
+border: none;
+border-radius: 8px;
+font-size: 1.1rem;
+font-weight: bold;
+color: #333;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+background-color: #f39c12;
+color: #fff;
+}
+
+.login-form p {
+margin-top: 20px;
+font-size: 0.95rem;
+}
+
+.login-form a {
+color: #f39c12;
+text-decoration: none;
+}

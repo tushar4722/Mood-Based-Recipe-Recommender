@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipes - MoodRecipe</title>
+  <link rel="stylesheet" href="recipes.css">
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">MoodRecipe</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="mood.html">Recipes</a>
+      <a href="#">Favorites</a>
+      <a href="#">About</a>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Recipe Section -->
+  <section class="recipes-section">
+    <h2>Recommended Recipes</h2>
+    <div class="recipe-grid" id="recipe-list">
+      <!-- Recipes will be shown here -->
+      <div class="recipe-card">
+        <img src="Cozy Creamy Pasta.jpeg" alt="Pasta">
+        <h3>Cozy Creamy Pasta</h3>
+        <p>Perfect for rainy weather and lazy moods!</p>
+        <a href="cozy-pasta.html" class="view-btn">View Recipe</a>
+      </div>
+
+      <div class="recipe-card">
+        <img src="Fresh Energy Salad.jpg" alt="Salad">
+        <h3>Fresh Energy Salad</h3>
+        <p>For when you're feeling energetic and it's sunny out!</p>
+        <a href="#" class="view-btn">View Recipe</a>
+      </div>
+      
+      <!-- Add more as needed -->
+    </div>
+  </section>
+
+  <section class="recipes-section">
+    <h2 id="mood-title">Recommended Recipes</h2>
+    <div class="recipe-grid" id="recipe-list">
+  
+      <!-- Happy Mood -->
+      <div class="recipe-card" data-mood="happy">
+        <img src="https://source.unsplash.com/400x300/?chocolate-cake" alt="Chocolate Cake">
+        <h3>Chocolate Cake</h3>
+        <p>Sweet and indulgent for happy vibes!</p>
+      </div>
+      <div class="recipe-card" data-mood="happy">
+        <img src="https://source.unsplash.com/400x300/?smoothie" alt="Fruit Smoothie">
+        <h3>Fruit Smoothie</h3>
+        <p>Refreshing & colorful like your mood!</p>
+      </div>
+  
+      <!-- Sad Mood -->
+      <div class="recipe-card" data-mood="sad">
+        <img src="https://source.unsplash.com/400x300/?soup" alt="Soup">
+        <h3>Warm Soup</h3>
+        <p>Comfort food to warm your soul.</p>
+      </div>
+      <div class="recipe-card" data-mood="sad">
+        <img src="https://source.unsplash.com/400x300/?mac-and-cheese" alt="Mac and Cheese">
+        <h3>Mac & Cheese</h3>
+        <p>Classic hug-in-a-bowl dish for sad days.</p>
+      </div>
+  
+      <!-- Lazy Mood -->
+      <div class="recipe-card" data-mood="lazy">
+        <img src="https://source.unsplash.com/400x300/?noodles" alt="Noodles">
+        <h3>Instant Noodles</h3>
+        <p>Ready in minutes, zero effort!</p>
+      </div>
+      <div class="recipe-card" data-mood="lazy">
+        <img src="https://source.unsplash.com/400x300/?rice" alt="One Pot Rice">
+        <h3>One Pot Rice</h3>
+        <p>All-in-one easy comfort meal.</p>
+      </div>
+  
+      <!-- Stressed Mood -->
+      <div class="recipe-card" data-mood="stressed">
+        <img src="https://source.unsplash.com/400x300/?herbal-tea" alt="Herbal Tea">
+        <h3>Herbal Tea</h3>
+        <p>Calm your mind with soothing tea.</p>
+      </div>
+      <div class="recipe-card" data-mood="stressed">
+        <img src="https://source.unsplash.com/400x300/?cookies" alt="Cookies">
+        <h3>Comfort Cookies</h3>
+        <p>Sweet bites to reduce stress.</p>
+      </div>
+  
+      <!-- Energetic Mood -->
+      <div class="recipe-card" data-mood="energetic">
+        <img src="https://source.unsplash.com/400x300/?salad" alt="Salad">
+        <h3>Power Salad</h3>
+        <p>Fuel your energy with freshness!</p>
+      </div>
+      <div class="recipe-card" data-mood="energetic">
+        <img src="https://source.unsplash.com/400x300/?protein-bowl" alt="Protein Bowl">
+        <h3>Protein Bowl</h3>
+        <p>Strong food for a strong day!</p>
+      </div>
+  
+    </div>
+  </section>
+  
+
+
+  <script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const mood = localStorage.getItem("selectedMood");
+          document.getElementById("mood-title").textContent = `Recommended Recipes for "${mood.charAt(0).toUpperCase() + mood.slice(1)}" Mood`;
+      
+          const allCards = document.querySelectorAll(".recipe-card");
+          allCards.forEach(card => {
+            card.style.display = (card.dataset.mood === mood) ? "block" : "none";
+          });
+        });
+      </script>
+      
+  </script>
+
+</body>
+</html>
